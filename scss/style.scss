@@ -1,0 +1,7 @@
+@use 'reset';
+
+body{
+    width: min(90ch, 100vw);
+    margin-inline: auto;
+    background-color: rgb(180, 180, 180);
+}

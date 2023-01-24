@@ -24,12 +24,12 @@ router.get('/', async function (req, res, next) {
 
 router.post('/new', async function (req, res, next) {
     const { author, title, content } = req.body;
-    const [rows] = await promisePool.query("INSERT INTO ja15forum (authorId, title, content) VALUES (?, ?, ?)", [author, title, content]);
+    const [rows] = await promisePool.query("INSERT INTO al04forum (authorId, title, content) VALUES (?, ?, ?)", [author, title, content]);
     res.redirect('/');
 });
 
 router.get('/new', async function (req, res, next) {
-    const [users] = await promisePool.query("SELECT * FROM ja15users");
+    const [users] = await promisePool.query("SELECT * FROM al04users");
     res.render('new.njk', {
         title: 'Nytt inlägg',
         users,

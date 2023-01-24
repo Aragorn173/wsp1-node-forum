@@ -13,6 +13,8 @@ nunjucks.configure('views', {
     express: app,
 });
 
+app.use(express.static('public'))
+
 app.use('/', indexRouter);
 
 app.listen(port, () => {
