@@ -18286,10 +18286,41 @@ progress {
   }
 }
 body {
-  width: min(90ch, 100vw);
+  width: 100%;
   margin-inline: auto;
-  background-color: #121212;
+  background-color: #505050;
   color: white;
+}
+
+main {
+  width: min(90ch, 100vw - 2rem);
+  margin-inline: auto;
+  padding-bottom: 4rem;
+}
+
+:root {
+  --mo-secondary-color: #109847;
+  --mo-link-color: #109847;
+  --mo-nav-tabs-link-hover-border-color: #109847;
+}
+
+footer {
+  padding-bottom: 0;
+}
+
+
+li {
+  color: black;
+  padding-top: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.card-img-top {
+  border-radius: 1000px;
+  width: 6rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -33,12 +33,35 @@ $prefix: "mo-";
 
 
 body{
-    width: min(90ch, 100vw);
+    width: 100%;
     margin-inline: auto;
-    background-color: #121212;
+    background-color: #505050;
     color: white;
 }
 
-a:active{
-    
+main{
+    width: min(90ch, 100vw - 2rem);
+    margin-inline: auto;
+    padding-bottom: 4rem;
+}
+
+:root {
+    --mo-secondary-color: #109847;
+    --mo-link-color: #109847;
+    --mo-nav-tabs-link-hover-border-color: #109847;
+}
+
+footer {
+    padding-bottom: 0;
+}
+
+.cardpadding {
+    padding-top: 2rem;
+}
+
+li {
+    color: black;
+}
+ul {
+    list-style: none;
 }
