@@ -18323,8 +18323,12 @@ ul {
   width: 6rem;
 }
 
-.card-body{
+.card{
   padding: 1rem;
+}
+
+.btn {
+  box-shadow: grey 3px 3px 3px;
 }
 
 /*# sourceMappingURL=style.css.map */

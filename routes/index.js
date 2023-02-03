@@ -16,7 +16,7 @@ const promisePool = pool.promise();
 
 
 router.get('/', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT * FROM al04forum ORDER BY createdAt DESC");
+    const [rows] = await promisePool.query("SELECT * FROM al04forum JOIN al04users ON al04forum.authorId = al04users.id ORDER BY createdAt DESC");
     res.render('index.njk', {
         rows: rows,
         title: 'Forum',
@@ -47,6 +47,21 @@ router.get('/new', async function (req, res, next) {
     res.render('new.njk', {
         title: 'Nytt inlägg',
         users,
+    });
+});
+
+router.get('/post/:id', async function (req, res) {
+    const [rows] = await promisePool.query(
+        `SELECT al04forum.*, al04users.name AS username
+        FROM al04forum
+        JOIN al04users ON al04forum.authorId = al04users.id
+        WHERE al04forum.id = ?;`,
+        [req.params.id]
+    );
+
+    res.render('post.njk', {
+        post: rows[0],
+        title: 'Forum',
     });
 });
 

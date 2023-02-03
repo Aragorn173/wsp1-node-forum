@@ -5,10 +5,12 @@
     <li>
         <div class="card" style="width: 100%;">
             <img src="img/pfp.jpg" class="card-img-top" alt="pfp">
+            <p>{{ row.name }}</p>
+
             <div class="card-body">
               <h5 class="card-title"> {{ row.title }}</h5>
               <p class="card-text"> {{ row.content }}</p>
-              <a href="#" class="btn btn-primary">Kommentera</a>
+              <a href="/post/{{ row.id }}" class="btn btn-primary">Visit post</a>
             </div>
             <p>{{ row.createdAt }}</p>
           </div>
